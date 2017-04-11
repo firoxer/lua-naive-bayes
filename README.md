@@ -19,16 +19,38 @@ Instantiate a classifier:
 local classifier = simple.new()
 ```
 
-Make the classifier learn stuff (replace `[data]` and `[classification]` with anything you want):
+Make the classifier learn stuff (replace `[data]` with a simple table and `[classification]` with whatever):
 
 ```lua
 classifier:learn([data], [classification])
 ```
 
-Finally, ask the classifiers opinion on new data:
+Finally, ask the classifiers opinion on new data (replace `[data]` with a simple table):
 
 ```lua
 local guessedClassification = classifier:guess([data])
 ```
 
-See the `tests/` directory for examples.
+
+### Example
+
+Simple text analysis:
+
+```lua
+local simple = require('naivebayes/simple')
+
+local function splitSentenceToWords(sentence)
+  -- *snip*
+end
+
+local positiveSentence = 'ice-cream is delicious and tasty'
+local negativeSentence = 'escargots are slimy and gross'
+
+local classifier = simple.new()
+classifier:learn(splitSentenceToWords(positiveSentence), 'positive')
+classifier:learn(splitSentenceToWords(negativeSentence), 'negative')
+
+-- gets assigned 'negative'
+local guessedClassification =
+  classifier:guess(splitSentenceToWords('slimy escargots are not delicious'))
+```
