@@ -6,9 +6,9 @@ source = {
 }
 
 description = {
-  summary = "Generic naive Bayes implementations",
+  summary = "Generic naive Bayes implementation",
   detailed = [[
-    Naive Bayes implementations to satisfy your classification needs.
+    A Naive Bayes implementation to satisfy your classification needs.
     In-memory, simple-to-use, no-frills.
   ]],
   homepage = "https://github.com/firoxer/naive-bayes-lua",
