@@ -1,5 +1,5 @@
 package = "naive-bayes"
-version = "dev-0"
+version = "dev-1"
 
 source = {
   url = "git://github.com/firoxer/naive-bayes-lua.git"
