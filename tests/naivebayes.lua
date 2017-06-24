@@ -2,7 +2,7 @@
 
 require "minctest"
 
-local Simple = require("naivebayes/simple")
+local NaiveBayes = require("naivebayes.naivebayes")
 
 local function splitToWords(sentence)
    local words = {}
@@ -21,7 +21,7 @@ local sentences = {
    ["sinister villains horrified the injured"] = "negative"
 }
 
-local classifier = Simple.new()
+local classifier = NaiveBayes.new()
 
 -- Split the test sentences to words and learn them
 for sentence, classification in pairs(sentences) do

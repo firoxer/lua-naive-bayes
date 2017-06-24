@@ -23,6 +23,6 @@ dependencies = {
 build = {
   type = "builtin",
   modules = {
-    simple = "naivebayes/simple.lua"
+    ["naivebayes.naivebayes"] = "naivebayes/naivebayes.lua"
   }
 }

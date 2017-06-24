@@ -2,7 +2,7 @@
 --
 -- Adapted from https://github.com/yannickl88/blog-articles/blob/master/src/machine-learning-naive-bayes/Classifier.php
 
-local Simple = {}
+local NaiveBayes = {}
 
 -- Calculate the total probability for a classification
 local function calculate_total_probability(self, classification)
@@ -30,7 +30,7 @@ local function calculate_probability(self, datum, classification)
 end
 
 -- Figure out the best classification for given data
-function Simple:guess(data)
+function NaiveBayes:guess(data)
    local best_likelihood = 0
    local best_classification = nil
 
@@ -52,7 +52,7 @@ function Simple:guess(data)
 end
 
 -- Understand how data should be classified
-function Simple:learn(data, classification)
+function NaiveBayes:learn(data, classification)
    for _, datum in pairs(data) do
       -- For initializing values possibly missing
       -- TODO: Replace with metatables
@@ -80,7 +80,7 @@ return {
          __index = function () return 0 end
       })
 
-      setmetatable(self, {__index = Simple})
+      setmetatable(self, {__index = NaiveBayes})
       return self
    end
 }
