@@ -10,13 +10,13 @@ How to use
 Require the thing:
 
 ```lua
-local simple = require('naivebayes/simple')
+local Simple = require('naivebayes/simple')
 ```
 
 Instantiate a classifier:
 
 ```lua
-local classifier = simple.new()
+local classifier = Simple.new()
 ```
 
 Make the classifier learn stuff (replace `[data]` with a simple table and `[classification]` with whatever):
@@ -37,7 +37,7 @@ local guessedClassification = classifier:guess([data])
 Simple text analysis:
 
 ```lua
-local simple = require('naivebayes/simple')
+local Simple = require('naivebayes/simple')
 
 local function splitSentenceToWords(sentence)
   -- *snip*
@@ -46,7 +46,7 @@ end
 local positiveSentence = 'ice-cream is delicious and tasty'
 local negativeSentence = 'escargots are slimy and gross'
 
-local classifier = simple.new()
+local classifier = Simple.new()
 classifier:learn(splitSentenceToWords(positiveSentence), 'positive')
 classifier:learn(splitSentenceToWords(negativeSentence), 'negative')
 
