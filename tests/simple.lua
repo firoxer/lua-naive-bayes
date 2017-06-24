@@ -1,3 +1,5 @@
+-- luacheck: ignore lrun lok
+
 require "minctest"
 
 local Simple = require("naivebayes/simple")
